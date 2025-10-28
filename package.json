@@ -1,0 +1,6 @@
+{
+  "name": "eportfolio-gallery",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+}
