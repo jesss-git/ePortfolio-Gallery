@@ -349,6 +349,12 @@
   }
 }
 
+@media (min-width: 801px) {
+  .card-description {
+    display: none;
+  }
+}
+
 @media (max-width: 800px) {
   .gallery-section {
     padding: 4rem 2rem 10rem;

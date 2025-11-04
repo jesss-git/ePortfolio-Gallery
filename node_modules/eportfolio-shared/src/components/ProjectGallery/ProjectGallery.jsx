@@ -6,6 +6,7 @@ const tagColorMap = {
   "After Effects": "#dcccec", // purple
   "JavaScript": "#fdf4c7", // yellow
   "Python": "#dcf0f7", // blue
+  "Photoshop": "#bcd8ec", // blue
 
   "React": "#ffcbe1", // pink
   "Flask": "#d6e5bd", // green

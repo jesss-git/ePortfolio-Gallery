@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 const NAV_LINKS = [
   { name: "HOME", path: "/" },
-  { name: "UX/UI", path: "/ux-ui" },
+  { name: "EXPERIENCE", path: "/experience" },
   { name: "GRAPHICS", path: "/graphics" },
   { name: "GALLERY", path: "/gallery" },
   { name: "CODE", path: "/code" },
