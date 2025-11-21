@@ -1,5 +1,5 @@
 import React from "react";
-import { ProjectGallery } from "eportfolio-shared";
+import { ProjectGallery, UnderConstruction } from "eportfolio-shared";
 import "./Gallery.css"
 import heroImg from "../assets/Images/geeseinvasion.png"
 
@@ -32,20 +32,23 @@ export default function Gallery() {
   ];
 
   return (
-    <>
-      <section
-        className="codehero"
-        style={{
-          backgroundImage: `url(${heroImg})`, 
-        }}
-      ></section>
+
+    <UnderConstruction />
+    
+    // <>
+    //   <section
+    //     className="codehero"
+    //     style={{
+    //       backgroundImage: `url(${heroImg})`, 
+    //     }}
+    //   ></section>
 
 
-      <ProjectGallery
-        title="Featured Gallery Projects"
-        subtitle="Apps, tools, and experiments inspired by climbing and nature."
-        projects={GalleryProjects}
-      />
-    </>
+    //   <ProjectGallery
+    //     title="Featured Gallery Projects"
+    //     subtitle="Apps, tools, and experiments inspired by climbing and nature."
+    //     projects={GalleryProjects}
+    //   />
+    // </>
   );
 }
