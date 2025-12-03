@@ -6,17 +6,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #073CE4;
+  background: #073C4E;
 }
 
 /* Background */
 .hero-bg {
   position: absolute;
-  width: auto;
-  height: 90%;
   top: 0;
+
+  width: 100vw;
+  height: 90vh;     
+
+  object-fit: cover;
+  object-position: center;
   z-index: 1;
-  object-fit: contain;
 }
 
 /* Photographer (middle layer) */
