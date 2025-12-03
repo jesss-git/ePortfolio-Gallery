@@ -1,19 +1,22 @@
 .gallery-hero {
   position: relative;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #073CE4;
 }
 
 /* Background */
 .hero-bg {
   position: absolute;
-  width: 110%;
+  width: auto;
+  height: 90%;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 1;
-  will-change: transform;
+  object-fit: contain;
 }
 
 /* Photographer (middle layer) */

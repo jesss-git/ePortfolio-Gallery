@@ -84,7 +84,7 @@ export default function Gallery() {
 
   return (
     <>
-    
+
       <section className="gallery-hero" ref={heroRef}>
         <img className="hero-bg" ref={bgRef} src={heroBG} alt="Background" />
         <img className="hero-photographer" ref={photographerRef} src={heroP} alt="Photographer" />
@@ -93,7 +93,7 @@ export default function Gallery() {
       </section>
 
       {/* 📸 Your actual gallery after the hero */}
-      <ProjectGallery
+      {/* <ProjectGallery
         title="Featured Gallery Projects"
         subtitle="Apps, tools, and experiments inspired by climbing and nature."
         projects={[
@@ -101,7 +101,7 @@ export default function Gallery() {
           { id: 2, image: heroBG, title: "Gallery Proj 2" },
           { id: 3, image: heroBG, title: "Gallery Proj 3" },
         ]}
-      />
+      /> */}
     </>
   );
 
