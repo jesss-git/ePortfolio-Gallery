@@ -15,32 +15,32 @@ gsap.registerPlugin(ScrollTrigger);
 //import heroImg from "../assets/Images/geeseinvasion.png"
 
 export default function Gallery() {
-  const GalleryProjects = [
-    {
-      id: 1,
-      image: heroImg,
-      title: "Gallery Prroj 1",
-      date: "April 2025",
-      description: "Exploring computational sound, I wanted to visualize sound, creating a looper pedal effect where users can record themselves and play back audio, while observing their audio being transformed into a kaleidoscope visual.",
-      tags: ["Python"],
-    },
-    {
-      id: 2,
-      image: heroImg,
-      title: "Gallery Prroj 2",
-      date: "April 2025",
-      description: "Exploring computational sound, I wanted to visualize sound, creating a looper pedal effect where users can record themselves and play back audio, while observing their audio being transformed into a kaleidoscope visual.",
-      tags: ["Python"],
-    },
-    {
-      id: 3,
-      image: heroImg,
-      title: "Gallery Prroj 3",
-      date: "April 2025",
-      description: "Exploring computational sound, I wanted to visualize sound, creating a looper pedal effect where users can record themselves and play back audio, while observing their audio being transformed into a kaleidoscope visual.",
-      tags: ["Python"],
-    },
-  ];
+  // const GalleryProjects = [
+  //   {
+  //     id: 1,
+  //     image: heroImg,
+  //     title: "Gallery Prroj 1",
+  //     date: "April 2025",
+  //     description: "Exploring computational sound, I wanted to visualize sound, creating a looper pedal effect where users can record themselves and play back audio, while observing their audio being transformed into a kaleidoscope visual.",
+  //     tags: ["Python"],
+  //   },
+  //   {
+  //     id: 2,
+  //     image: heroImg,
+  //     title: "Gallery Prroj 2",
+  //     date: "April 2025",
+  //     description: "Exploring computational sound, I wanted to visualize sound, creating a looper pedal effect where users can record themselves and play back audio, while observing their audio being transformed into a kaleidoscope visual.",
+  //     tags: ["Python"],
+  //   },
+  //   {
+  //     id: 3,
+  //     image: heroImg,
+  //     title: "Gallery Prroj 3",
+  //     date: "April 2025",
+  //     description: "Exploring computational sound, I wanted to visualize sound, creating a looper pedal effect where users can record themselves and play back audio, while observing their audio being transformed into a kaleidoscope visual.",
+  //     tags: ["Python"],
+  //   },
+  // ];
 
   const bgRef = useRef(null);
   const fgRef = useRef(null);
@@ -86,26 +86,26 @@ export default function Gallery() {
     <>
       <section className="photo-hero" ref={heroRef}>
         <img
-          src="/assets/background.png"
+          src="/assets/Images/Hero/Background.png"
           className="bg-layer"
           alt="bg"
         />
 
         <img
-          src="/assets/photographer.png"
+          src="/assets/Images/Hero/Photographer.png"
           ref={photographerRef}
           className="photographer"
           alt="photographer"
         />
 
         <img
-          src="/assets/foreground.png"
+          src="/assets/Images/Hero/Foreground.png"
           className="fg-layer"
           alt="foreground"
         />
 
         <img
-          src="/assets/lens.png"
+          src="/assets/Images/Hero/Lens.png"
           ref={lensRef}
           className="lens"
           alt="lens"
