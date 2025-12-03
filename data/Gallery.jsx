@@ -84,7 +84,7 @@ export default function Gallery() {
   return (
 
     <>
-      <section className="photo-hero" ref={heroRef}>
+      <section className="photo-hero" ref={bgRef}>
         <img
           src="/assets/Images/Hero/Background.png"
           className="bg-layer"
