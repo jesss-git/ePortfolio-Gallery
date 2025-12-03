@@ -84,7 +84,7 @@ export default function Gallery() {
 
   return (
     <>
-      {/* 🌟 HERO SECTION */}
+    
       <section className="gallery-hero" ref={heroRef}>
         <img className="hero-bg" ref={bgRef} src={heroBG} alt="Background" />
         <img className="hero-photographer" ref={photographerRef} src={heroP} alt="Photographer" />
