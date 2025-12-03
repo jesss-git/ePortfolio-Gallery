@@ -52,10 +52,10 @@
 /* Lens */
 .hero-lens {
   position: absolute;
-  bottom: 40%;
+  bottom: 30%;
 
-  width: 5vw;
-  height: 5vh;
+  width: 53px;
+  height: 53px;
 
   object-fit: cover;
   object-position: center;
