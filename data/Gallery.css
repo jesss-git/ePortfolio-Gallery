@@ -39,12 +39,13 @@
 .hero-photographer {
   position: absolute;
   bottom: 0;
-  left: 50%;
-  width: 60vw;
-  max-width: 700px;
-  transform-origin: center bottom;
+
+  width: 115vw;
+  height: 100vh;
+
+  object-fit: cover;
+  object-position: center;
   z-index: 3;
-  will-change: transform;
 }
 
 
