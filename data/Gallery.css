@@ -52,12 +52,13 @@
 /* Lens */
 .hero-lens {
   position: absolute;
-  width: 180px;
-  height: 180px;
-  left: 50%;
-  bottom: 48%;       /* tweak this to match the camera lens position */
-  transform: translate(-50%, 50%);
+  bottom: 40%;
+
+  width: 5vw;
+  height: 5vh;
+
+  object-fit: cover;
+  object-position: center;
   z-index: 4;
-  will-change: transform;
 }
 
