@@ -1,6 +1,9 @@
 import React from "react";
 import { ProjectGallery, UnderConstruction } from "eportfolio-shared";
 import "./Gallery.css"
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import heroBG from "../assets/Images/Background.png";
 import heroFG from "../assets/Images/Foreground.png";
