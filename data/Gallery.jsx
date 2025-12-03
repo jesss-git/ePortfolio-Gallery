@@ -1,6 +1,12 @@
 import React from "react";
 import { ProjectGallery, UnderConstruction } from "eportfolio-shared";
 import "./Gallery.css"
+
+import heroBG from "../assets/Images/Background.png";
+import heroFG from "../assets/Images/Foreground.png";
+import heroP from "../assets/Images/Photographer.png";
+import heroLens from "../assets/Images/Lens.png";
+
 import heroImg from "../assets/Images/geeseinvasion.png"
 
 export default function Gallery() {
@@ -32,6 +38,8 @@ export default function Gallery() {
   ];
 
   return (
+
+
 
     <UnderConstruction />
     

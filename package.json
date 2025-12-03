@@ -4,6 +4,7 @@
   "main": "index.js",
   "type": "module",
   "dependencies": {
-    "eportfolio-shared": "github:jesss-git/ePortfolio-Shared"
+    "eportfolio-shared": "github:jesss-git/ePortfolio-Shared",
+    "gsap": "^3.13.0"
   }
 }
