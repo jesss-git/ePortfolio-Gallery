@@ -22,6 +22,19 @@
   z-index: 1;
 }
 
+/* Foreground */
+.hero-fg {
+  position: absolute;
+  bottom: 0;
+
+  width: 100vw;
+  height: 90vh;
+
+  object-fit: cover;
+  object-position: center;
+  z-index: 2;
+}
+
 /* Photographer (middle layer) */
 .hero-photographer {
   position: absolute;
@@ -34,16 +47,6 @@
   will-change: transform;
 }
 
-/* Foreground */
-.hero-fg {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 120%;
-  transform: translateX(-50%);
-  z-index: 2;
-  will-change: transform;
-}
 
 /* Lens */
 .hero-lens {
