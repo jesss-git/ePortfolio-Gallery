@@ -5,10 +5,10 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import heroBG from "../assets/Images/Background.png";
-import heroFG from "../assets/Images/Foreground.png";
-import heroP from "../assets/Images/Photographer.png";
-import heroLens from "../assets/Images/Lens.png";
+import heroBG from "../assets/Images/Hero/Background.png";
+import heroFG from "../assets/Images/Hero/Foreground.png";
+import heroP from "../assets/Images/Hero/Photographer.png";
+import heroLens from "../assets/Images/Hero/Lens.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
