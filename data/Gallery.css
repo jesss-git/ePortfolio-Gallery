@@ -12,24 +12,26 @@
   margin-top: -80px;
 } */
 
-.photo-hero {
+.gallery-hero {
   position: relative;
   height: 100vh;
   width: 100%;
   overflow: hidden;
 }
 
-.bg-layer {
+/* Background */
+.hero-bg {
   position: absolute;
   width: 110%;
-  height: auto;
-  left: 50%;
   top: 0;
+  left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+  will-change: transform;
 }
 
-.photographer {
+/* Photographer (middle layer) */
+.hero-photographer {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -41,29 +43,26 @@
   will-change: transform;
 }
 
-.fg-layer {
+/* Foreground */
+.hero-fg {
   position: absolute;
   bottom: 0;
-  width: 120%;
   left: 50%;
+  width: 120%;
   transform: translateX(-50%);
   z-index: 4;
+  will-change: transform;
 }
 
-.lens {
+/* Lens */
+.hero-lens {
   position: absolute;
   width: 180px;
   height: 180px;
   left: 50%;
-  bottom: 48%;
+  bottom: 48%;       /* tweak this to match the camera lens position */
   transform: translate(-50%, 50%);
   z-index: 5;
   will-change: transform;
-}
-
-.gallery-section {
-  padding: 4rem 2rem;
-  background: white;
-  min-height: 200vh;
 }
 

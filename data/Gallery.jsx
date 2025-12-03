@@ -3,6 +3,7 @@ import { ProjectGallery, UnderConstruction } from "eportfolio-shared";
 import "./Gallery.css"
 
 import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import heroBG from "../assets/Images/Hero/Background.png";
@@ -103,7 +104,7 @@ export default function Gallery() {
       />
     </>
   );
-  
+
   // const GalleryProjects = [
   //   {
   //     id: 1,
