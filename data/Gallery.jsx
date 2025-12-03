@@ -10,7 +10,9 @@ import heroFG from "../assets/Images/Foreground.png";
 import heroP from "../assets/Images/Photographer.png";
 import heroLens from "../assets/Images/Lens.png";
 
-import heroImg from "../assets/Images/geeseinvasion.png"
+gsap.registerPlugin(ScrollTrigger);
+
+//import heroImg from "../assets/Images/geeseinvasion.png"
 
 export default function Gallery() {
   const GalleryProjects = [
@@ -40,11 +42,84 @@ export default function Gallery() {
     },
   ];
 
+  const bgRef = useRef(null);
+  const fgRef = useRef(null);
+  const photographerRef = useRef(null);
+  const lensRef = useRef(null);
+
+  useEffect(() => {
+    const bg = bgRef.current;
+    const fg = fgRef.current;
+    const photographer = photographerRef.current;
+    const lens = lensRef.current;
+
+    // photographer zoom-in
+    gsap.to(photographer, {
+      scale: 2.8,
+      y: -150,
+      transformOrigin: "center bottom",
+      ease: "none",
+      scrollTrigger: {
+        trigger: bg,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    // lens expansion
+    gsap.to(lens, {
+      scale: 15,
+      transformOrigin: "center",
+      ease: "none",
+      scrollTrigger: {
+        trigger: bg,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  }, []);
+
   return (
 
+    <>
+      <section className="photo-hero" ref={heroRef}>
+        <img
+          src="/assets/background.png"
+          className="bg-layer"
+          alt="bg"
+        />
+
+        <img
+          src="/assets/photographer.png"
+          ref={photographerRef}
+          className="photographer"
+          alt="photographer"
+        />
+
+        <img
+          src="/assets/foreground.png"
+          className="fg-layer"
+          alt="foreground"
+        />
+
+        <img
+          src="/assets/lens.png"
+          ref={lensRef}
+          className="lens"
+          alt="lens"
+        />
+      </section>
+
+      <section className="gallery-section">
+        <h2>Your Photography Gallery</h2>
+        {/* Your photos grid */}
+      </section>
+    </>
 
 
-    <UnderConstruction />
+    // <UnderConstruction />
     
     // <>
     //   <section
