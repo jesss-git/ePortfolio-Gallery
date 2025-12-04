@@ -69,7 +69,7 @@
 
   width: 110px;
   height: 110px;
-  transform: translateX(-50%, 50%);
+  transform: translateX(-50%);
 
   /* object-fit: contain;
   object-position: center; */
