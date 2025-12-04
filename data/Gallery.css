@@ -52,9 +52,9 @@
 
   width: 115vw;
   height: 100vh;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
 
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   z-index: 3;
 }
