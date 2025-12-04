@@ -62,13 +62,13 @@
 /* Lens */
 .hero-lens {
   position: absolute;
-  bottom: 25%;
-  left: 50%;
+  bottom: 33%;
+  left: 45%;
 
   width: auto;
-  height: 7vh;
+  height: 15vh;
 
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   z-index: 4;
 }
