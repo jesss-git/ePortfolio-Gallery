@@ -62,7 +62,8 @@
 /* Lens */
 .hero-lens {
   position: absolute;
-  bottom: 0;
+  bottom: 25%;
+  left: 50%;
 
   width: auto;
   height: 7vh;
