@@ -62,14 +62,17 @@
 /* Lens */
 .hero-lens {
   position: absolute;
-  bottom: 33%;
-  left: 45%;
+  left: 52%;
+  bottom: 42%;
+  /* bottom: 31.5%;
+  left: 50%; */
 
-  width: auto;
-  height: 15vh;
+  width: 10%;
+  height: auto;
+  transform: translateX(-50%);
 
-  object-fit: contain;
-  object-position: center;
+  /* object-fit: contain;
+  object-position: center; */
   z-index: 4;
 }
 
