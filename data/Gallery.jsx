@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import heroBG from "../assets/Images/Hero/Background.png";
 import heroFG from "../assets/Images/Hero/Foreground.png";
 import heroP from "../assets/Images/Hero/Photographer.png";
-import heroLens from "../assets/Images/Hero/Lens.png";
+import heroLens from "../assets/Images/Hero/NewLens.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
