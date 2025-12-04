@@ -49,7 +49,7 @@
 /* Photographer (middle layer) */
 .hero-photographer {
   position: absolute;
-  left: -50%;
+  left: 0%;
   bottom: 0;
 
   width: auto;
