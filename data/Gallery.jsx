@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import heroBG from "../assets/Images/Hero/Background.png";
 import heroFG from "../assets/Images/Hero/Foreground.png";
 import heroP from "../assets/Images/Hero/Photographer.png";
-import heroLens from "../assets/Images/Hero/NewLens.png";
+import heroLens from "../assets/Images/Hero/Lens.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,9 +87,25 @@ export default function Gallery() {
 
       <section className="gallery-hero" ref={heroRef}>
         <img className="hero-bg" ref={bgRef} src={heroBG} alt="Background" />
-        <img className="hero-photographer" ref={photographerRef} src={heroP} alt="Photographer" />
         <img className="hero-fg" ref={fgRef} src={heroFG} alt="Foreground" />
-        <img className="hero-lens" ref={lensRef} src={heroLens} alt="Lens" />
+        {/* <img className="hero-photographer" ref={photographerRef} src={heroP} alt="Photographer" />
+        <img className="hero-lens" ref={lensRef} src={heroLens} alt="Lens" /> */}
+
+        <div className="hero-photographer-wrapper">
+          <img
+            className="hero-photographer"
+            ref={photographerRef}
+            src={heroP}
+            alt="Photographer"
+          />
+          <img
+            className="hero-lens"
+            ref={lensRef}
+            src={heroLens}
+            alt="Lens"
+          />
+        </div>
+
       </section>
 
       {/* 📸 Your actual gallery after the hero */}
