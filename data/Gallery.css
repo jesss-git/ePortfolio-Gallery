@@ -52,6 +52,7 @@
 
   width: 115vw;
   height: 100vh;
+  /* transform: translate(-50%, -50%); */
 
   object-fit: cover;
   object-position: center;
@@ -63,7 +64,7 @@
 .hero-lens {
   position: absolute;
   left: 50%;
-  bottom: 39%;
+  bottom: 30%;
   /* bottom: 31.5%;
   left: 50%; */
 
