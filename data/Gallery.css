@@ -49,6 +49,8 @@
 /* Photographer (middle layer) */
 .hero-photographer {
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
 
   width: auto;
