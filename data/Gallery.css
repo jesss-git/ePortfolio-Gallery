@@ -63,12 +63,12 @@
 .hero-lens {
   position: absolute;
   left: 52%;
-  bottom: 32%;
+  bottom: 30%;
   /* bottom: 31.5%;
   left: 50%; */
 
   width: auto;
-  height: 15%;
+  height: 13%;
   /* transform: translateX(-50%); */
 
   /* object-fit: contain;
