@@ -53,8 +53,8 @@
   width: 115vw;
   height: 100vh;
 
-  /* object-fit: cover;
-  object-position: center; */
+  object-fit: cover;
+  object-position: center;
   z-index: 3;
 }
 
