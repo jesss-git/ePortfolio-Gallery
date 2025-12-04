@@ -67,9 +67,9 @@
   /* bottom: 31.5%;
   left: 50%; */
 
-  width: auto;
+  width: 115px;
   height: 13%;
-  transform: translateX(-50%);
+  transform: translateX(-50%, 50%);
 
   /* object-fit: contain;
   object-position: center; */
