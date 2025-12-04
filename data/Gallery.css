@@ -38,9 +38,9 @@
 .hero-photographer-wrapper {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 0%;
 
-  width: auto;
+  width: 115vw;
   height: 100vh;
   z-index: 3;
 }
@@ -48,14 +48,13 @@
 /* Photographer (middle layer) */
 .hero-photographer {
   position: absolute;
-  left: -50%;
   bottom: 0;
 
-  width: auto;
+  width: 115vw;
   height: 100vh;
 
-  object-fit: contain;
-  object-position: center;
+  /* object-fit: cover;
+  object-position: center; */
   z-index: 3;
 }
 
@@ -63,13 +62,13 @@
 /* Lens */
 .hero-lens {
   position: absolute;
-  bottom: 35%;
+  bottom: 0;
 
-  width: 12%;
-  height: auto;
+  width: 90px;
+  height: 90px;
 
-  /* object-fit: cover;
-  object-position: center; */
+  object-fit: cover;
+  object-position: center;
   z-index: 4;
 }
 
