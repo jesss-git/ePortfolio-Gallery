@@ -52,7 +52,7 @@
   width: auto;
   height: 100vh;
 
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   z-index: 3;
 }
