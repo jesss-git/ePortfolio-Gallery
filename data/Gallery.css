@@ -37,6 +37,7 @@
 
 .hero-photographer-wrapper {
   position: absolute;
+  object-fit: cover;
   object-position: center;
   bottom: 0;
 
