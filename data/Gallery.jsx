@@ -23,6 +23,7 @@ export default function Gallery() {
 
   const heroBoxRef = useRef(null);
   const overlayRef = useRef(null);
+  const galleryRef = useRef(null);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -75,6 +76,15 @@ export default function Gallery() {
         currentRadius = this.targets()[0].currentRadius;
       }
     }, 0.2);
+
+    // fade gallery
+    tl.add(() => {
+      gsap.to(gallery, {
+        opacity: 1,
+        duration: 1.2,
+        ease: "power1.out"
+      });
+    });
   
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
@@ -104,7 +114,7 @@ export default function Gallery() {
 
       </section>
 
-      <section className="gallery">
+      <section className="gallery" ref={galleryRef}>
         <ProjectGallery
           title="Featured Gallery Projects"
           subtitle="Apps, tools, and experiments inspired by climbing and nature."
