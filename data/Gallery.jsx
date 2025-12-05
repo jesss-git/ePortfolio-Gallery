@@ -42,11 +42,11 @@ export default function Gallery() {
 
     let HEROBOX_Y;
     if (isMobile) {
-      HEROBOX_Y = -2300;
+      HEROBOX_Y = -2450;
     } else if (isShortVH) {
       HEROBOX_Y = -1700;
     } else {
-      HEROBOX_Y = -2850;
+      HEROBOX_Y = -3000;
     }
   
     let portalRadius = 0;
