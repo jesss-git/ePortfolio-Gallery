@@ -44,7 +44,7 @@
 .hero-box {
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: 50%;
   transform: translateX(-50%);
   height: 80vh;     /* photographer height */
 }
@@ -52,7 +52,7 @@
 .hero-photographer {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .hero-lens {
