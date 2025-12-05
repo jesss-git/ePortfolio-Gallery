@@ -54,7 +54,6 @@
 
 .hero-photographer {
   height: 100%;
-  left: 50%;
   width: auto;
   display: block;
   z-index: 3;
@@ -62,7 +61,7 @@
 
 .hero-lens {
   position: absolute;
-  left: 50%;
+  left: 45%;
   bottom: 33%;     /* % OF THE BOX — FIXES THE DRIFT */
   /* transform: translateX(-50%); */
   height: 11%;     /* % OF THE BOX */
