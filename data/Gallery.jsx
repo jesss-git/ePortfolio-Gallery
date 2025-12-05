@@ -52,6 +52,9 @@ export default function Gallery() {
           gsap.set(overlay, {
             clipPath: `circle(${portalRadius}px at ${cx}px ${cy}px)`
           });
+        },
+        onLeave: () => {
+          gsap.to(gallery, { opacity: 1, duration: 1, ease: "power1.out" });
         }
       }
     });
@@ -84,7 +87,7 @@ export default function Gallery() {
       opacity: 1,
       duration: 1,
       ease: "power1.out"
-    }, "+=0");
+    });
   
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
