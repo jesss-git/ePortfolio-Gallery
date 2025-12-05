@@ -68,18 +68,18 @@
   z-index: 4;
 }
 
+.gallery {
+  opacity: 0;
+  z-index: 6;
+}
+
 .portal-overlay {
   position: absolute;
   inset: 0; 
-  z-index: 6; 
+  z-index: 5; 
   pointer-events: none;
   background: rgba(7,60,78,0.96);
   clip-path: circle(0px at 50% 50%);
   -webkit-clip-path: circle(0px at 50% 50%);
   transition: none;
-}
-
-.gallery {
-  opacity: 0;
-  z-index: 10;
 }
