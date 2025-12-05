@@ -55,8 +55,7 @@
 }
 
 .hero-box {
-  position: relative;
-  margin: 0 auto;
+  position: absolute;
   left: 50%;
   bottom: 0;
   transform-origin: center center;
