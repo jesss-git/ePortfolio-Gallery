@@ -105,22 +105,6 @@ export default function Gallery() {
   return (
     <>
 
-      <section className="gallery-hero" ref={heroRef}>
-        <img className="hero-bg" ref={bgRef} src={heroBG} alt="Background" />
-        <img className="hero-text" ref={gallerytextRef} src={galleryText} alt="Gallery Text" />
-        <img className="hero-fg" ref={fgRef} src={heroFG} alt="Foreground" />
-
-        <div className="hero-photographer-wrapper">
-          <div className="hero-box" ref={heroBoxRef}>
-            <img className="hero-photographer" ref={photographerRef} src={heroP} alt="Photographer" />
-            <img className="hero-lens" ref={lensRef} src={heroLens} alt="Lens" />
-          </div>
-        </div>
-
-        <div className="portal-overlay" ref={overlayRef} />
-
-      </section>
-
       <section className="gallery" ref={galleryRef}>
         <UnderConstruction />
         <UnderConstruction />
@@ -144,6 +128,23 @@ export default function Gallery() {
           ]}
         /> */}
       </section>
+      <section className="gallery-hero" ref={heroRef}>
+        <img className="hero-bg" ref={bgRef} src={heroBG} alt="Background" />
+        <img className="hero-text" ref={gallerytextRef} src={galleryText} alt="Gallery Text" />
+        <img className="hero-fg" ref={fgRef} src={heroFG} alt="Foreground" />
+
+        <div className="hero-photographer-wrapper">
+          <div className="hero-box" ref={heroBoxRef}>
+            <img className="hero-photographer" ref={photographerRef} src={heroP} alt="Photographer" />
+            <img className="hero-lens" ref={lensRef} src={heroLens} alt="Lens" />
+          </div>
+        </div>
+
+        <div className="portal-overlay" ref={overlayRef} />
+
+      </section>
+
+      
     </>
   );
 
