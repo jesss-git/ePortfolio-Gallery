@@ -28,11 +28,11 @@ export default function Gallery() {
     const hero = heroRef.current;
     const bg = bgRef.current;
     const fg = fgRef.current;
-    const photographer = photographerRef.current;
     const lens = lensRef.current;
     const overlay = overlayRef.current;
   
-    // timeline with pinning
+    let currentRadius = 0; // needed for overlay update
+  
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: hero,
@@ -41,12 +41,10 @@ export default function Gallery() {
         scrub: true,
         pin: true,
         onUpdate: () => {
-          // 🔄 recompute lens center dynamically (after scaling)
           const rect = lens.getBoundingClientRect();
           const cx = rect.left + rect.width / 2;
           const cy = rect.top + rect.height / 2;
-          
-          // apply the updated center while clip-path is growing
+  
           gsap.set(overlay, {
             clipPath: `circle(${currentRadius}px at ${cx}px ${cy}px)`,
             webkitClipPath: `circle(${currentRadius}px at ${cx}px ${cy}px)`
@@ -54,7 +52,8 @@ export default function Gallery() {
         }
       }
     });
-
+  
+    // scale & move entire photographer + lens container
     tl.to(heroBoxRef.current, {
       scale: 2.6,
       y: -200,
@@ -66,17 +65,15 @@ export default function Gallery() {
     tl.to(bg, { y: -110, ease: "none" }, 0);
     tl.to(fg, { y: 70, ease: "none" }, 0);
   
-    // massive reveal radius
+    // reveal radius
     const maxR = Math.hypot(window.innerWidth, window.innerHeight);
   
-    // variable radius for onUpdate
-    let currentRadius = 0;
-  
-    // animate radius change only
     tl.to({}, {
       currentRadius: maxR,
       ease: "none",
-      onUpdate() { currentRadius = this.targets()[0].currentRadius; }
+      onUpdate() {
+        currentRadius = this.targets()[0].currentRadius;
+      }
     }, 0.6);
   
     return () => {
@@ -84,6 +81,7 @@ export default function Gallery() {
       tl.kill();
     };
   }, []);
+  
   
 
   
