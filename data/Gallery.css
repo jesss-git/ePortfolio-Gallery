@@ -36,90 +36,26 @@
 }
 
 .hero-photographer-wrapper {
-  position: relative;  /* important */
+  position: relative;
   width: 100%;
-  height: 100vh;  /* shared coordinate space */
+  height: 100vh;
   overflow: visible;
 }
 
-/* Photographer */
 .hero-photographer {
   position: absolute;
   left: 50%;
-  bottom: 0;      /* adjust as needed */
-  transform: translateX(-50%);
-  height: calc(100vh * 0.8);      /* scales with screen */
-  z-index: 3;
-}
-
-/* Lens */
-.hero-lens {
-  position: absolute;
-  left: 50%;
-  bottom: calc(100vh * 0.8 * 0.33);      /* adjust so it aligns over the camera */
-  transform: translateX(-50%);
-  height: calc(100vh * 0.8 * 0.11);      /* scales proportionally */
-  z-index: 4;
-}
-
-
-/* .hero-photographer-wrapper {
-  position: absolute;
   bottom: 0;
-  left: -5%;
-
-  width: 115vw;
-  height: 100vh;
+  transform: translateX(-50%);
+  height: calc(100vh * 0.8);
   z-index: 3;
 }
-
-.hero-photographer {
-  position: absolute;
-  left: 50%;
-  bottom: -55%;
-
-  width: auto;
-  height: 950px;
-  transform: translate(-50%, -50%);
-
-  z-index: 3;
-}
-
 
 .hero-lens {
   position: absolute;
   left: 50%;
-  bottom: 30%;
-
-  width: 110px;
-  height: 110px;
-  transform: translate(-50%, -50%);
-
+  bottom: calc(100vh * 0.8 * 0.33);
+  transform: translateX(-50%);
+  height: calc(100vh * 0.8 * 0.11);
   z-index: 4;
-} */
-
-/* .hero-photographer {
-  position: absolute;
-  bottom: 0;
-
-  width: 115vw;
-  height: 100vh;
-
-  object-fit: cover;
-  object-position: center;
-  z-index: 3;
 }
-
-
-.hero-lens {
-  position: absolute;
-  left: 50%;
-  bottom: 30%;
-
-  width: 110px;
-  height: 110px;
-  transform: translate(-50%, -50%);
-
-  z-index: 4;
-} */
-
