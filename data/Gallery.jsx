@@ -55,7 +55,7 @@ export default function Gallery() {
   
     // scale & move entire photographer + lens container
     tl.to(heroBoxRef.current, {
-      scale: 13,
+      scale: 20,
       y: -1400,
       transformOrigin: "center center",
       ease: "none"
@@ -74,7 +74,7 @@ export default function Gallery() {
       onUpdate() {
         currentRadius = this.targets()[0].currentRadius;
       }
-    }, 0.4);
+    }, 0.6);
   
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
