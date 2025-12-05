@@ -63,7 +63,7 @@
   position: absolute;
   /* left: 50%; */
   bottom: 33%;     /* % OF THE BOX — FIXES THE DRIFT */
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
   height: 11%;     /* % OF THE BOX */
   z-index: 4;
 }
