@@ -48,7 +48,7 @@
   left: 50%;
   bottom: 0%;      /* adjust as needed */
   transform: translateX(-50%);
-  height: 80vh;      /* scales with screen */
+  height: 70vh;      /* scales with screen */
   z-index: 3;
 }
 
