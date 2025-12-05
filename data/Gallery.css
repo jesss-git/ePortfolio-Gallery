@@ -50,9 +50,9 @@
   left: 50%;
   bottom: 30;
 
-  width: 115vw;
-  height: 100vh;
-  transform: translate(-50%, -5%);
+  width: auto;
+  height: 1080px;
+  transform: translate(-50%, -50%);
 
   object-fit: cover;
   object-position: center;
