@@ -21,6 +21,7 @@ export default function Gallery() {
   const photographerRef = useRef(null);
   const lensRef = useRef(null);
 
+  const heroBoxRef = useRef(null);
   const overlayRef = useRef(null);
 
   useEffect(() => {
@@ -53,22 +54,30 @@ export default function Gallery() {
         }
       }
     });
-  
-    // photographer zoom
-    tl.to(photographer, {
-      scale: 2.6,
-      y: -200,
-      transformOrigin: "center center",
-      ease: "none"
-    }, 0);
-  
-    // lens zoom (same origin → moves identically)
-    tl.to(lens, {
+
+    tl.to(heroBoxRef.current, {
       scale: 2.6,
       y: -200,
       transformOrigin: "center bottom",
       ease: "none"
     }, 0);
+    
+  
+    // // photographer zoom
+    // tl.to(photographer, {
+    //   scale: 2.6,
+    //   y: -200,
+    //   transformOrigin: "center center",
+    //   ease: "none"
+    // }, 0);
+  
+    // // lens zoom (same origin → moves identically)
+    // tl.to(lens, {
+    //   scale: 2.6,
+    //   y: -200,
+    //   transformOrigin: "center bottom",
+    //   ease: "none"
+    // }, 0);
   
     // parallax
     tl.to(bg, { y: -110, ease: "none" }, 0);
@@ -104,7 +113,7 @@ export default function Gallery() {
         <img className="hero-fg" ref={fgRef} src={heroFG} alt="Foreground" />
 
         <div className="hero-photographer-wrapper">
-          <div className="hero-box">
+          <div className="hero-box" ref={heroBoxRef}>
             <img className="hero-photographer" ref={photographerRef} src={heroP} alt="Photographer" />
             <img className="hero-lens" ref={lensRef} src={heroLens} alt="Lens" />
           </div>
