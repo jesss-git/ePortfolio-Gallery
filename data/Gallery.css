@@ -52,7 +52,7 @@
 
   width: auto;
   height: 950px;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, 50%);
 
   object-fit: cover;
   object-position: center;
