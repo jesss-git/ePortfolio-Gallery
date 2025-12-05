@@ -52,10 +52,10 @@
 
   width: auto;
   height: 950px;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 0%);
 
-  object-fit: cover;
-  object-position: center;
+  /* object-fit: cover;
+  object-position: center; */
   z-index: 3;
 }
 
