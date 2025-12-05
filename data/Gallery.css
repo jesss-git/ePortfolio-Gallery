@@ -57,12 +57,9 @@
 }
 
 .hero-box {
-  /* position: absolute; */
   position: absolute;
-  /* left: 50%; */
   bottom: 0;
   transform-origin: center center;
-  /* transform: translateX(-50%); */
   height: 80vh;
   width: auto;
   z-index: 4;
