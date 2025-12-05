@@ -82,13 +82,6 @@ export default function Gallery() {
       }
     }, 0.15);
   
-    // 4. Fade in the gallery once portal reaches full-screen
-    tl.to(gallery, {
-      opacity: 1,
-      duration: 1,
-      ease: "power1.out"
-    });
-  
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
       tl.kill();
