@@ -66,3 +66,7 @@
   height: 11%;
   z-index: 4;
 }
+
+.hero-lens {
+  clip-path: circle(50% at center);
+}
