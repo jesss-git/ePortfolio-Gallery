@@ -74,7 +74,7 @@ export default function Gallery() {
       onUpdate() {
         currentRadius = this.targets()[0].currentRadius;
       }
-    }, 0.6);
+    }, 0.2);
   
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
