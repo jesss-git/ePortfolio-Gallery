@@ -56,7 +56,7 @@ export default function Gallery() {
 
     // photographer subtle zoom
     tl.to(photographer, {
-      scale: 2.6,
+      scale: 5,
       y: -200,
       transformOrigin: "center center",
       ease: "none",
