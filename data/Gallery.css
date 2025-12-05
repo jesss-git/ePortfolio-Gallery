@@ -67,11 +67,6 @@
   z-index: 4;
 }
 
-.hero-lens {
-  clip-path: circle(50% at center);
-}
-
-
 /* overlay covers the hero, initially hides gallery except small circular hole */
 .portal-overlay {
   position: absolute;
