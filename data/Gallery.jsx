@@ -59,14 +59,14 @@ export default function Gallery() {
     // 1. Photographer zooms dramatically while staying centered
     tl.to(heroBox, {
       scale: 30,
-      y: -2900,
+      y: -2950,
       transformOrigin: "center center",
       ease: "none"
     }, 0);
   
     // 2. Subtle parallax 
-    tl.to(bg, { y: -110, ease: "none" }, 0);
-    tl.to(fg, { y: 70, ease: "none" }, 0);
+    tl.to(bg, { y: -300, scale: 15, ease: "none" }, 0);
+    tl.to(fg, { y: 140, scale: 7, ease: "none" }, 0);
   
     // 3. Expand portal radius (lens → entire screen)
     const maxRadius = Math.hypot(window.innerWidth, window.innerHeight);
