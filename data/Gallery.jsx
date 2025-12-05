@@ -34,65 +34,65 @@ export default function Gallery() {
     const heroBox = heroBoxRef.current;
     const gallery = galleryRef.current;
   
-    let currentRadius = 0;
+    let portalRadius = 0;
   
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: hero,
         start: "top top",
-        end: "bottom+=1200 top",
+        end: "+=1500",
         scrub: true,
         pin: true,
+        pinSpacing: false,   // ⬅ prevents gallery from being pushed down
         onUpdate: () => {
-          const rect = lens.getBoundingClientRect();
-          const cx = rect.left + rect.width / 2;
-          const cy = rect.top + rect.height / 2;
+          const r = lens.getBoundingClientRect();
+          const cx = r.left + r.width / 2;
+          const cy = r.top + r.height / 2;
   
           gsap.set(overlay, {
-            clipPath: `circle(${currentRadius}px at ${cx}px ${cy}px)`,
-            webkitClipPath: `circle(${currentRadius}px at ${cx}px ${cy}px)`
+            clipPath: `circle(${portalRadius}px at ${cx}px ${cy}px)`
           });
         }
       }
     });
   
-    // photographer/lens zoom via container
+    // 1. Photographer zooms dramatically while staying centered
     tl.to(heroBox, {
       scale: 30,
-      y: -2900,
+      y: 0,
+      x: 0,
       transformOrigin: "center center",
       ease: "none"
     }, 0);
   
-    // parallax
+    // 2. Subtle parallax 
     tl.to(bg, { y: -110, ease: "none" }, 0);
     tl.to(fg, { y: 70, ease: "none" }, 0);
   
-    const maxR = Math.hypot(window.innerWidth, window.innerHeight);
+    // 3. Expand portal radius (lens → entire screen)
+    const maxRadius = Math.hypot(window.innerWidth, window.innerHeight);
   
-    // portal reveal
-    tl.to({}, {
-      currentRadius: maxR,
+    tl.to({ radius: 0 }, {
+      radius: maxRadius,
       ease: "none",
-      onUpdate() {
-        currentRadius = this.targets()[0].currentRadius;
+      onUpdate: function () {
+        portalRadius = this.targets()[0].radius;
       }
-    }, 0.2);
+    }, 0.15);
   
-    // fade in gallery AFTER scroll animation completes
-    tl.add(() => {
-      gsap.to(gallery, {
-        opacity: 1,
-        duration: 1.2,
-        ease: "power1.out"
-      });
-    });
+    // 4. Fade in the gallery once portal reaches full-screen
+    tl.to(gallery, {
+      opacity: 1,
+      duration: 1.2,
+      ease: "power1.out"
+    }, ">-0.2");
   
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
       tl.kill();
     };
   }, []);
+  
   
   
   
