@@ -57,14 +57,15 @@ export default function Gallery() {
     // photographer subtle zoom
     tl.to(photographer, {
       scale: 2.6,
-      y: -120,
-      transformOrigin: "center bottom",
+      y: -200,
+      transformOrigin: "center center",
       ease: "none",
     }, 0);
 
     // keep lens scaling subtle — the overlay does the reveal
     tl.to(lens, {
-      scale: 1.8,
+      scale: 2.6,
+      y: -200,
       transformOrigin: "center center",
       ease: "none",
     }, 0);
