@@ -84,7 +84,7 @@ export default function Gallery() {
       opacity: 1,
       duration: 1,
       ease: "power1.out"
-    }, 1);
+    }, "+=0");
   
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
@@ -124,15 +124,15 @@ export default function Gallery() {
             { id: 1, image: heroBG, title: "Gallery Proj 1" },
             { id: 2, image: heroBG, title: "Gallery Proj 2" },
             { id: 3, image: heroBG, title: "Gallery Proj 3" },
-            { id: 4, image: heroBG, title: "Gallery Proj 4" },
-            { id: 5, image: heroBG, title: "Gallery Proj 5" },
-            { id: 6, image: heroBG, title: "Gallery Proj 6" },
-            { id: 7, image: heroBG, title: "Gallery Proj 7" },
-            { id: 8, image: heroBG, title: "Gallery Proj 8" },
-            { id: 9, image: heroBG, title: "Gallery Proj 9" },
-            { id: 10, image: heroBG, title: "Gallery Proj 10" },
-            { id: 11, image: heroBG, title: "Gallery Proj 11" },
-            { id: 12, image: heroBG, title: "Gallery Proj 12" },
+            // { id: 4, image: heroBG, title: "Gallery Proj 4" },
+            // { id: 5, image: heroBG, title: "Gallery Proj 5" },
+            // { id: 6, image: heroBG, title: "Gallery Proj 6" },
+            // { id: 7, image: heroBG, title: "Gallery Proj 7" },
+            // { id: 8, image: heroBG, title: "Gallery Proj 8" },
+            // { id: 9, image: heroBG, title: "Gallery Proj 9" },
+            // { id: 10, image: heroBG, title: "Gallery Proj 10" },
+            // { id: 11, image: heroBG, title: "Gallery Proj 11" },
+            // { id: 12, image: heroBG, title: "Gallery Proj 12" },
           ]}
         />
       </section>
