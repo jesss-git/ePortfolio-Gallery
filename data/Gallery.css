@@ -70,3 +70,17 @@
 .hero-lens {
   clip-path: circle(50% at center);
 }
+
+
+/* overlay covers the hero, initially hides gallery except small circular hole */
+.portal-overlay {
+  position: absolute;
+  inset: 0;                    /* top:0; right:0; bottom:0; left:0; */
+  z-index: 6;                  /* on top of everything in the hero */
+  pointer-events: none;
+  background: rgba(7,60,78,0.96); /* dark overlay (match aesthetic) */
+  /* start with no visible hole (we'll set an initial circle in JS) */
+  clip-path: circle(0px at 50% 50%);
+  -webkit-clip-path: circle(0px at 50% 50%);
+  transition: none;
+}

@@ -21,63 +21,75 @@ export default function Gallery() {
   const photographerRef = useRef(null);
   const lensRef = useRef(null);
 
+  const overlayRef = useRef(null);
+
   useEffect(() => {
     const hero = heroRef.current;
     const bg = bgRef.current;
     const fg = fgRef.current;
     const photographer = photographerRef.current;
     const lens = lensRef.current;
+    const overlay = overlayRef.current;
 
-    // TIMELINE FOR A CLEAN SYNCED ANIMATION
+    // compute lens center in page coords and starting radius
+    const lensRect = lens.getBoundingClientRect();
+    const startCx = lensRect.left + lensRect.width / 2;
+    const startCy = lensRect.top + lensRect.height / 2;
+    const startR = Math.max(lensRect.width, lensRect.height) / 2;
+
+    // convert to pixels and set the overlay clip-path initial state (pixel coords)
+    gsap.set(overlay, {
+      clipPath: `circle(${startR}px at ${startCx}px ${startCy}px)`,
+      webkitClipPath: `circle(${startR}px at ${startCx}px ${startCy}px)`,
+    });
+
+    // Create timeline and pin the hero
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: hero,
         start: "top top",
-        end: "bottom+=1000 top",
+        end: "bottom+=1200 top",
         scrub: true,
         pin: true,
       },
     });
 
-    // 🎥 1) Photographer zooms in
+    // photographer subtle zoom
     tl.to(photographer, {
-      scale: 3,
-      y: -150,
+      scale: 2.6,
+      y: -120,
       transformOrigin: "center bottom",
       ease: "none",
-    });
+    }, 0);
 
-    // 🔍 2) Lens enlarges MUCH MORE than photographer
-    tl.to(
-      lens,
-      {
-        scale: 20,
-        transformOrigin: "center center",
-        ease: "none",
-      },
-      0.1 // starts a little after photographer starts zooming
-    );
+    // keep lens scaling subtle — the overlay does the reveal
+    tl.to(lens, {
+      scale: 1.8,
+      transformOrigin: "center center",
+      ease: "none",
+    }, 0);
 
-    // 🌄 3) Background parallax
-    tl.to(
-      bg,
-      {
-        y: -120,
-        ease: "none",
-      },
-      0
-    );
+    // background/foreground parallax
+    tl.to(bg, { y: -110, ease: "none" }, 0);
+    tl.to(fg, { y: 70, ease: "none" }, 0);
 
-    // 🌿 4) Foreground parallax
-    tl.to(
-      fg,
-      {
-        y: 80,
-        ease: "none",
-      },
-      0
-    );
+    // animate the overlay's clip-path from small circle to LARGE (full screen)
+    // compute a big radius that definitely covers the viewport diagonal
+    const maxRadius = Math.hypot(window.innerWidth, window.innerHeight);
+
+    tl.to(overlay, {
+      clipPath: `circle(${maxRadius}px at ${startCx}px ${startCy}px)`,
+      webkitClipPath: `circle(${maxRadius}px at ${startCx}px ${startCy}px)`,
+      ease: "none",
+    }, 0.6); // start later in the timeline - tweak 0.6 as desired
+
+    // cleanup function is recommended
+    return () => {
+      ScrollTrigger.getAll().forEach(st => st.kill());
+      tl.kill();
+    };
   }, []);
+
   
 
   return (
@@ -93,6 +105,8 @@ export default function Gallery() {
             <img className="hero-lens" ref={lensRef} src={heroLens} alt="Lens" />
           </div>
         </div>
+
+        <div className="portal-overlay" ref={overlayRef} />
 
       </section>
 
