@@ -48,10 +48,10 @@
 .hero-photographer {
   position: absolute;
   left: 50%;
-  bottom: -50%;
+  bottom: -60%;
 
   width: auto;
-  height: 980px;
+  height: 950px;
   transform: translate(-50%, -50%);
 
   object-fit: cover;
