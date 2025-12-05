@@ -23,39 +23,59 @@ export default function Gallery() {
 
   useEffect(() => {
     const hero = heroRef.current;
-  
-    let tl = gsap.timeline({
+    const bg = bgRef.current;
+    const fg = fgRef.current;
+    const photographer = photographerRef.current;
+    const lens = lensRef.current;
+
+    // TIMELINE FOR A CLEAN SYNCED ANIMATION
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: hero,
         start: "top top",
         end: "bottom top",
-        scrub: 1,
-        pin: true,
-      }
+        scrub: true,
+      },
     });
-  
-    // Photographer zooms in
-    tl.to(photographerRef.current, {
-      scale: 2.8,
-      y: "-15vh",
+
+    // 🎥 1) Photographer zooms in
+    tl.to(photographer, {
+      scale: 3,
+      y: -150,
       transformOrigin: "center bottom",
-    }, 0);
-  
-    // Lens expands
-    tl.to(lensRef.current, {
-      scale: 12,
-      transformOrigin: "center center",
-    }, 0);
-  
-    // Background parallax
-    tl.to(bgRef.current, {
-      y: "-15vh",
-    }, 0);
-  
-    // Foreground parallax
-    tl.to(fgRef.current, {
-      y: "10vh",
-    }, 0);
+      ease: "none",
+    });
+
+    // 🔍 2) Lens enlarges MUCH MORE than photographer
+    tl.to(
+      lens,
+      {
+        scale: 20,
+        transformOrigin: "center center",
+        ease: "none",
+      },
+      0.1 // starts a little after photographer starts zooming
+    );
+
+    // 🌄 3) Background parallax
+    tl.to(
+      bg,
+      {
+        y: -120,
+        ease: "none",
+      },
+      0
+    );
+
+    // 🌿 4) Foreground parallax
+    tl.to(
+      fg,
+      {
+        y: 80,
+        ease: "none",
+      },
+      0
+    );
   }, []);
   
 
