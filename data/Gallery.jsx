@@ -36,6 +36,9 @@ export default function Gallery() {
     const overlay = overlayRef.current;
     const heroBox = heroBoxRef.current;
     const gallery = galleryRef.current;
+
+    const isMobile = window.innerWidth <= 768;
+    const HEROBOX_Y = isMobile ? -1900 : -2400;
   
     let portalRadius = 0;
     document.body.style.overflow = "hidden"; // Prevent scrolling during animation
@@ -63,7 +66,7 @@ export default function Gallery() {
     // 1. Photographer zooms dramatically while staying centered
     tl.to(heroBox, {
       scale: 30,
-      y: -2400,
+      y: HEROBOX_Y,
       transformOrigin: "center center",
       ease: "none"
     }, 0);
