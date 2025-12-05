@@ -10,6 +10,7 @@ import heroBG from "../assets/Images/Hero/Background.png";
 import heroFG from "../assets/Images/Hero/Foreground.png";
 import heroP from "../assets/Images/Hero/Photographer.png";
 import heroLens from "../assets/Images/Hero/Lens.png";
+import galleryText from "../assets/Images/Hero/GALLERY.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,6 +104,7 @@ export default function Gallery() {
 
       <section className="gallery-hero" ref={heroRef}>
         <img className="hero-bg" ref={bgRef} src={heroBG} alt="Background" />
+        <img className="hero-text" src={galleryText} alt="Gallery Text" />
         <img className="hero-fg" ref={fgRef} src={heroFG} alt="Foreground" />
 
         <div className="hero-photographer-wrapper">

@@ -35,6 +35,18 @@
   z-index: 2;
 }
 
+.hero-text {
+  position: absolute;
+  top: 10%;
+
+  width: 50vw;
+  height: auto;
+
+  object-fit: cover;
+  object-position: center;
+  z-index: 3;
+}
+
 .hero-photographer-wrapper {
   position: relative;
   width: 100%;
@@ -49,14 +61,14 @@
   transform: translateX(-50%);
   height: 80vh;
   width: auto;
-  z-index: 3;
+  z-index: 4;
 }
 
 .hero-photographer {
   height: 100%;
   width: auto;
   display: block;
-  z-index: 3;
+  z-index: 4;
 }
 
 .hero-lens {
@@ -64,13 +76,13 @@
   left: 47%;
   bottom: 33%;
   height: 11%;
-  z-index: 4;
+  z-index: 5;
 }
 
 .portal-overlay {
   position: absolute;
   inset: 0; 
-  z-index: 5; 
+  z-index: 6; 
   pointer-events: none;
   background: rgba(7,60,78,0.96);
   clip-path: circle(0px at 50% 50%);
@@ -85,5 +97,5 @@
   height: 100vh;
   opacity: 0;
   background: white;
-  z-index: 10;
+  z-index: 7;
 }
