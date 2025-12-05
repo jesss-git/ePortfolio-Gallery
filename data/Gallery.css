@@ -39,6 +39,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
+  overflow: visible;
 }
 
 .hero-box {
@@ -51,6 +52,7 @@
 }
 
 .hero-photographer {
+  position: absolute;
   height: 100%;
   width: auto;
   display: block;
