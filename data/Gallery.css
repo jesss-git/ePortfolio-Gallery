@@ -50,9 +50,11 @@
 }
 
 .hero-photographer-wrapper {
-  position: relative;
+  position: absolute;
   width: 100vw;
   height: 100vh;
+  justify-content: center;
+  align-items: center;
   overflow: visible;
 }
 
