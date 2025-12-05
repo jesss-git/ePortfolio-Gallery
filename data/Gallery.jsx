@@ -92,7 +92,7 @@ export default function Gallery() {
       onComplete: () => {
         document.body.style.overflow = ""; // Re-enable scrolling
       }
-    });
+    }, "+=0.5");
   
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
