@@ -122,7 +122,10 @@ export default function Gallery() {
       </section>
 
       <section className="gallery" ref={galleryRef}>
-        <ProjectGallery
+        <UnderConstruction />
+        <UnderConstruction />
+        <UnderConstruction />
+        {/* <ProjectGallery
           title="Featured Gallery Projects"
           subtitle="Apps, tools, and experiments inspired by climbing and nature."
           projects={[
@@ -139,7 +142,7 @@ export default function Gallery() {
             { id: 11, image: heroBG, title: "Gallery Proj 11" },
             { id: 12, image: heroBG, title: "Gallery Proj 12" },
           ]}
-        />
+        /> */}
       </section>
     </>
   );
