@@ -58,7 +58,7 @@ export default function Gallery() {
     tl.to(photographer, {
       scale: 2.6,
       y: -200,
-      transformOrigin: "center bottom",
+      transformOrigin: "center center",
       ease: "none"
     }, 0);
   
