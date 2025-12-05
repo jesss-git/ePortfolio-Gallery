@@ -38,6 +38,7 @@ export default function Gallery() {
     const gallery = galleryRef.current;
   
     let portalRadius = 0;
+    document.body.style.overflow = "hidden"; // Prevent scrolling during animation
   
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -87,8 +88,11 @@ export default function Gallery() {
     tl.to(gallery, {
       opacity: 1,
       duration: 1,
-      ease: "power1.out"
-    }, "+=0");
+      ease: "power1.out",
+      onComplete: () => {
+        document.body.style.overflow = ""; // Re-enable scrolling
+      }
+    });
   
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());

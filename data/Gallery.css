@@ -99,3 +99,7 @@
   background: white;
   z-index: 7;
 }
+
+body.no-scroll {
+  overflow: hidden;
+}
