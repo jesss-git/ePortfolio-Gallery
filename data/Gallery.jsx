@@ -33,8 +33,9 @@ export default function Gallery() {
       scrollTrigger: {
         trigger: hero,
         start: "top top",
-        end: "bottom top",
+        end: "bottom+=1000 top",
         scrub: true,
+        pin: true,
       },
     });
 
