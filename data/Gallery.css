@@ -47,7 +47,6 @@
   bottom: 0;
   transform: translateX(-50%);
   height: 80vh;     /* photographer height */
-  aspect-ratio: 0.66; /* adjust to your PNG */
 }
 
 .hero-photographer {
