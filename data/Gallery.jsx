@@ -92,8 +92,10 @@ export default function Gallery() {
         <img className="hero-lens" ref={lensRef} src={heroLens} alt="Lens" /> */}
 
         <div className="hero-photographer-wrapper">
-          <img className="hero-photographer" ref={photographerRef} src={heroP} alt="Photographer" />
-          <img className="hero-lens" ref={lensRef} src={heroLens} alt="Lens" />
+          <div className="hero-box">
+            <img className="hero-photographer" ref={photographerRef} src={heroP} alt="Photographer" />
+            <img className="hero-lens" ref={lensRef} src={heroLens} alt="Lens" />
+          </div>
         </div>
 
       </section>

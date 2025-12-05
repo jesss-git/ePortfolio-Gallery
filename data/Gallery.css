@@ -39,6 +39,36 @@
   position: relative;
   width: 100%;
   height: 100vh;
+}
+
+.hero-box {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 80vh;     /* photographer height */
+  aspect-ratio: 0.66; /* adjust to your PNG */
+}
+
+.hero-photographer {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.hero-lens {
+  position: absolute;
+  left: 50%;
+  bottom: 33%;     /* % OF THE BOX — FIXES THE DRIFT */
+  transform: translateX(-50%);
+  height: 11%;     /* % OF THE BOX */
+}
+
+
+/* .hero-photographer-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
   overflow: visible;
 }
 
@@ -58,5 +88,5 @@
   transform: translateX(-50%);
   height: calc(100vh * 0.8 * 0.11);
   z-index: 4;
-}
+} */
 
