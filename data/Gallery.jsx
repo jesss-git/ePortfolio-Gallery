@@ -21,6 +21,7 @@ export default function Gallery() {
   const fgRef = useRef(null);
   const photographerRef = useRef(null);
   const lensRef = useRef(null);
+  const gallerytextRef = useRef(null);
 
   const heroBoxRef = useRef(null);
   const overlayRef = useRef(null);
@@ -31,6 +32,7 @@ export default function Gallery() {
     const bg = bgRef.current;
     const fg = fgRef.current;
     const lens = lensRef.current;
+    const gallerytext = gallerytextRef.current;
     const overlay = overlayRef.current;
     const heroBox = heroBoxRef.current;
     const gallery = galleryRef.current;
@@ -68,6 +70,7 @@ export default function Gallery() {
     // 2. Subtle parallax 
     tl.to(bg, { y: -300, scale: 10, ease: "none" }, 0);
     tl.to(fg, { y: 140, scale: 7, ease: "none" }, 0);
+    tl.to(gallerytext, { y: -150, scale: 5, ease: "none" }, 0);
   
     // 3. Expand portal radius (lens → entire screen)
     const maxRadius = Math.hypot(window.innerWidth, window.innerHeight);
@@ -104,7 +107,7 @@ export default function Gallery() {
 
       <section className="gallery-hero" ref={heroRef}>
         <img className="hero-bg" ref={bgRef} src={heroBG} alt="Background" />
-        <img className="hero-text" src={galleryText} alt="Gallery Text" />
+        <img className="hero-text" ref={gallerytextRef} src={galleryText} alt="Gallery Text" />
         <img className="hero-fg" ref={fgRef} src={heroFG} alt="Foreground" />
 
         <div className="hero-photographer-wrapper">
