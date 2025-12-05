@@ -58,7 +58,7 @@
 
 .hero-box {
   position: fixed;
-  left: 50%;
+  /* left: 50%; */
   bottom: 0;
   transform: translateX(-50%);
   height: 80vh;
