@@ -58,8 +58,8 @@
 
 .hero-box {
   /* position: absolute; */
-  position: relative;
-  left: 50%;
+  position: absolute;
+  /* left: 50%; */
   bottom: 0;
   transform-origin: center center;
   transform: translateX(-50%);
