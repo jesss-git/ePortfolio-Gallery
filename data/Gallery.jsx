@@ -74,17 +74,18 @@ export default function Gallery() {
     tl.to({ radius: 0 }, {
       radius: maxRadius,
       ease: "none",
-      onUpdate: function () {
+      onUpdate() {
         portalRadius = this.targets()[0].radius;
       }
-    }, 0.15);
+    }, 0.15)
+    .addLabel("portalDone");
   
     // 4. Fade in the gallery once portal reaches full-screen
     tl.to(gallery, {
       opacity: 1,
       duration: 1,
       ease: "power1.out"
-    }, "+=0");
+    }, "portalDone+=0.5");
   
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
