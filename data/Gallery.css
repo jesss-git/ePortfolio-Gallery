@@ -52,8 +52,9 @@
 
 .hero-photographer {
   height: 100%;
-  width: 100%;
-  object-fit: contain;
+  width: auto;
+  display: block;
+  z-index: 3;
 }
 
 .hero-lens {
@@ -62,6 +63,7 @@
   bottom: 33%;     /* % OF THE BOX — FIXES THE DRIFT */
   transform: translateX(-50%);
   height: 11%;     /* % OF THE BOX */
+  z-index: 4;
 }
 
 
