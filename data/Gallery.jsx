@@ -55,8 +55,8 @@ export default function Gallery() {
   
     // scale & move entire photographer + lens container
     tl.to(heroBoxRef.current, {
-      scale: 25,
-      y: -2500,
+      scale: 30,
+      y: -3500,
       transformOrigin: "center center",
       ease: "none"
     }, 0);
