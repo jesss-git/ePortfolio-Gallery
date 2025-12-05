@@ -13,8 +13,6 @@ import heroLens from "../assets/Images/Hero/Lens.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
-//import heroImg from "../assets/Images/geeseinvasion.png"
-
 export default function Gallery() {
 
   const heroRef = useRef(null);
@@ -25,62 +23,41 @@ export default function Gallery() {
 
   useEffect(() => {
     const hero = heroRef.current;
-    const bg = bgRef.current;
-    const fg = fgRef.current;
-    const photographer = photographerRef.current;
-    const lens = lensRef.current;
-
-    // 🎥 Photographer zoom-in
-    gsap.to(photographer, {
+  
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: hero,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        pin: true,
+      }
+    });
+  
+    // Photographer zooms in
+    tl.to(photographerRef.current, {
       scale: 2.8,
-      y: -150,
-      ease: "none",
+      y: "-15vh",
       transformOrigin: "center bottom",
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    // 🔍 Lens expand to fill screen
-    gsap.to(lens, {
-      scale: 15,
-      ease: "none",
-      transformOrigin: "center",
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    // 🌄 Background parallax
-    gsap.to(bg, {
-      y: -120,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    // 🌿 Foreground parallax
-    gsap.to(fg, {
-      y: 60,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
+    }, 0);
+  
+    // Lens expands
+    tl.to(lensRef.current, {
+      scale: 12,
+      transformOrigin: "center center",
+    }, 0);
+  
+    // Background parallax
+    tl.to(bgRef.current, {
+      y: "-15vh",
+    }, 0);
+  
+    // Foreground parallax
+    tl.to(fgRef.current, {
+      y: "10vh",
+    }, 0);
   }, []);
+  
 
   return (
     <>
@@ -88,8 +65,6 @@ export default function Gallery() {
       <section className="gallery-hero" ref={heroRef}>
         <img className="hero-bg" ref={bgRef} src={heroBG} alt="Background" />
         <img className="hero-fg" ref={fgRef} src={heroFG} alt="Foreground" />
-        {/* <img className="hero-photographer" ref={photographerRef} src={heroP} alt="Photographer" />
-        <img className="hero-lens" ref={lensRef} src={heroLens} alt="Lens" /> */}
 
         <div className="hero-photographer-wrapper">
           <div className="hero-box">
