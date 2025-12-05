@@ -56,9 +56,9 @@
 .hero-lens {
   position: absolute;
   left: 50%;
-  bottom: calc(70vh * 0.3);      /* adjust so it aligns over the camera */
+  bottom: calc(100vh * 0.8 * 0.4);      /* adjust so it aligns over the camera */
   transform: translateX(-50%);
-  height: calc(70vh * 0.17);      /* scales proportionally */
+  height: calc(100vh * 0.8 * 0.13);      /* scales proportionally */
   z-index: 4;
 }
 
