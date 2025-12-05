@@ -84,7 +84,7 @@ export default function Gallery() {
       opacity: 1,
       duration: 1,
       ease: "power1.out"
-    }, ">-0.2");
+    }, 1);
   
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());

@@ -83,7 +83,6 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  top: 0;
   opacity: 0;
   background: white;
   z-index: 10;
