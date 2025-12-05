@@ -50,6 +50,7 @@
   height: 80vh;     /* photographer height */
   width: auto;
   background: rgba(255, 0, 0, 0.4);
+  z-index: 3;
 }
 
 .hero-photographer {
