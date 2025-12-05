@@ -38,7 +38,7 @@ export default function Gallery() {
     const gallery = galleryRef.current;
 
     const isMobile = window.innerWidth <= 768;
-    const HEROBOX_Y = isMobile ? -1900 : -2400;
+    const HEROBOX_Y = isMobile ? -1900 : -2600;
   
     let portalRadius = 0;
     document.body.style.overflow = "hidden"; // Prevent scrolling during animation
