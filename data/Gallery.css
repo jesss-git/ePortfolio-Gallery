@@ -44,9 +44,10 @@
 .hero-box {
   position: absolute;
   left: 50%;
-  bottom: 50%;
+  bottom: 0;
   transform: translateX(-50%);
   height: 80vh;     /* photographer height */
+  width: auto;
 }
 
 .hero-photographer {
