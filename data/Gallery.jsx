@@ -87,10 +87,7 @@ export default function Gallery() {
     tl.to(gallery, {
       opacity: 1,
       duration: 1,
-      ease: "power1.out",
-      onStart: () => {
-        gsap.set(gallery, { position: "relative" });
-      }
+      ease: "power1.out"
     }, "+=0");
   
     return () => {

@@ -57,10 +57,11 @@
 }
 
 .hero-box {
-  position: fixed;
+  position: absolute;
   /* left: 50%; */
   bottom: 0;
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
+  object-position: center;
   height: 80vh;
   width: auto;
   z-index: 4;
