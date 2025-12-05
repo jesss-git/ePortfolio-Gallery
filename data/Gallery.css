@@ -54,7 +54,7 @@
   height: 100vh;
   transform: translate(-50%, -50%);
 
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   z-index: 3;
 }
