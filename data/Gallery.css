@@ -54,6 +54,7 @@
 
 .hero-photographer {
   height: 100%;
+  left: 50%;
   width: auto;
   display: block;
   z-index: 3;
