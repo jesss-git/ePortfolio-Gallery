@@ -60,7 +60,7 @@
 }
 
 .hero-lens {
-  position: absolute;
+  /* position: absolute; */
   left: 50%;
   bottom: 33%;     /* % OF THE BOX — FIXES THE DRIFT */
   transform: translateX(-50%);
