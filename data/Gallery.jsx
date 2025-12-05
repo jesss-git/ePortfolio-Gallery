@@ -58,26 +58,9 @@ export default function Gallery() {
     tl.to(heroBoxRef.current, {
       scale: 2.6,
       y: -200,
-      transformOrigin: "center bottom",
+      transformOrigin: "center center",
       ease: "none"
     }, 0);
-    
-  
-    // // photographer zoom
-    // tl.to(photographer, {
-    //   scale: 2.6,
-    //   y: -200,
-    //   transformOrigin: "center center",
-    //   ease: "none"
-    // }, 0);
-  
-    // // lens zoom (same origin → moves identically)
-    // tl.to(lens, {
-    //   scale: 2.6,
-    //   y: -200,
-    //   transformOrigin: "center bottom",
-    //   ease: "none"
-    // }, 0);
   
     // parallax
     tl.to(bg, { y: -110, ease: "none" }, 0);
