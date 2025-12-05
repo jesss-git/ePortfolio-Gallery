@@ -65,7 +65,7 @@ export default function Gallery() {
     }, 0);
   
     // 2. Subtle parallax 
-    tl.to(bg, { y: -300, scale: 15, ease: "none" }, 0);
+    tl.to(bg, { y: -300, scale: 10, ease: "none" }, 0);
     tl.to(fg, { y: 140, scale: 7, ease: "none" }, 0);
   
     // 3. Expand portal radius (lens → entire screen)
