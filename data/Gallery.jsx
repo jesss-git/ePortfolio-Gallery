@@ -31,8 +31,10 @@ export default function Gallery() {
     const fg = fgRef.current;
     const lens = lensRef.current;
     const overlay = overlayRef.current;
+    const heroBox = heroBoxRef.current;
+    const gallery = galleryRef.current;
   
-    let currentRadius = 0; // needed for overlay update
+    let currentRadius = 0;
   
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -54,8 +56,8 @@ export default function Gallery() {
       }
     });
   
-    // scale & move entire photographer + lens container
-    tl.to(heroBoxRef.current, {
+    // photographer/lens zoom via container
+    tl.to(heroBox, {
       scale: 30,
       y: -2900,
       transformOrigin: "center center",
@@ -66,9 +68,9 @@ export default function Gallery() {
     tl.to(bg, { y: -110, ease: "none" }, 0);
     tl.to(fg, { y: 70, ease: "none" }, 0);
   
-    // reveal radius
     const maxR = Math.hypot(window.innerWidth, window.innerHeight);
   
+    // portal reveal
     tl.to({}, {
       currentRadius: maxR,
       ease: "none",
@@ -76,8 +78,8 @@ export default function Gallery() {
         currentRadius = this.targets()[0].currentRadius;
       }
     }, 0.2);
-
-    // fade gallery
+  
+    // fade in gallery AFTER scroll animation completes
     tl.add(() => {
       gsap.to(gallery, {
         opacity: 1,
@@ -91,6 +93,7 @@ export default function Gallery() {
       tl.kill();
     };
   }, []);
+  
   
   
 
