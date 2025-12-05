@@ -59,8 +59,7 @@ export default function Gallery() {
     // 1. Photographer zooms dramatically while staying centered
     tl.to(heroBox, {
       scale: 30,
-      y: 0,
-      x: 0,
+      y: -2900,
       transformOrigin: "center center",
       ease: "none"
     }, 0);
