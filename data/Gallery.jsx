@@ -30,20 +30,8 @@ export default function Gallery() {
     const photographer = photographerRef.current;
     const lens = lensRef.current;
     const overlay = overlayRef.current;
-
-    // compute lens center in page coords and starting radius
-    const lensRect = lens.getBoundingClientRect();
-    const startCx = lensRect.left + lensRect.width / 2;
-    const startCy = lensRect.top + lensRect.height / 2;
-    const startR = Math.max(lensRect.width, lensRect.height) / 2;
-
-    // convert to pixels and set the overlay clip-path initial state (pixel coords)
-    gsap.set(overlay, {
-      clipPath: `circle(${startR}px at ${startCx}px ${startCy}px)`,
-      webkitClipPath: `circle(${startR}px at ${startCx}px ${startCy}px)`,
-    });
-
-    // Create timeline and pin the hero
+  
+    // timeline with pinning
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: hero,
@@ -51,45 +39,60 @@ export default function Gallery() {
         end: "bottom+=1200 top",
         scrub: true,
         pin: true,
-      },
+        onUpdate: () => {
+          // 🔄 recompute lens center dynamically (after scaling)
+          const rect = lens.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          
+          // apply the updated center while clip-path is growing
+          gsap.set(overlay, {
+            clipPath: `circle(${currentRadius}px at ${cx}px ${cy}px)`,
+            webkitClipPath: `circle(${currentRadius}px at ${cx}px ${cy}px)`
+          });
+        }
+      }
     });
-
-    // photographer subtle zoom
+  
+    // photographer zoom
     tl.to(photographer, {
-      scale: 5,
+      scale: 2.6,
       y: -200,
-      transformOrigin: "center center",
-      ease: "none",
+      transformOrigin: "center bottom",
+      ease: "none"
     }, 0);
-
-    // keep lens scaling subtle — the overlay does the reveal
+  
+    // lens zoom (same origin → moves identically)
     tl.to(lens, {
       scale: 2.6,
       y: -200,
-      transformOrigin: "center center",
-      ease: "none",
+      transformOrigin: "center bottom",
+      ease: "none"
     }, 0);
-
-    // background/foreground parallax
+  
+    // parallax
     tl.to(bg, { y: -110, ease: "none" }, 0);
     tl.to(fg, { y: 70, ease: "none" }, 0);
-
-    // animate the overlay's clip-path from small circle to LARGE (full screen)
-    // compute a big radius that definitely covers the viewport diagonal
-    const maxRadius = Math.hypot(window.innerWidth, window.innerHeight);
-
-    tl.to(overlay, {
-      clipPath: `circle(${maxRadius}px at ${startCx}px ${startCy}px)`,
-      webkitClipPath: `circle(${maxRadius}px at ${startCx}px ${startCy}px)`,
+  
+    // massive reveal radius
+    const maxR = Math.hypot(window.innerWidth, window.innerHeight);
+  
+    // variable radius for onUpdate
+    let currentRadius = 0;
+  
+    // animate radius change only
+    tl.to({}, {
+      currentRadius: maxR,
       ease: "none",
-    }, 0.6); // start later in the timeline - tweak 0.6 as desired
-
-    // cleanup function is recommended
+      onUpdate() { currentRadius = this.targets()[0].currentRadius; }
+    }, 0.6);
+  
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
       tl.kill();
     };
   }, []);
+  
 
   
 
